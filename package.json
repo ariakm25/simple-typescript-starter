@@ -1,0 +1,26 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "Simple TypeScript Starter",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --ignore-watch node_modules -r tsconfig-paths/register ./src/index.ts",
+    "build": "cross-env NODE_ENV=production tsc --project tsconfig.json && tscpaths -p tsconfig.json -s src -o dist",
+    "prod": "cross-env NODE_ENV=production tsc --project tsconfig.json --skipLibCheck && tscpaths -p tsconfig.json -s src -o dist && node dist/index.js"
+  },
+  "author": "ariakm25",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "cross-env": "^7.0.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
+    "tscpaths": "0.0.9",
+    "typescript": "^4.2.4"
+  }
+}
